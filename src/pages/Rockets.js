@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Rockets = () => (
-  <div>Rockets</div>
-);
+const Rockets = () => {
+  const rockets = useSelector(())
+}
 
 export default Rockets;
