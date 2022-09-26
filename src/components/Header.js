@@ -2,8 +2,6 @@ import React from 'react';
 import Navbar from './Navbar';
 import logo from '../assets/images/planet.png';
 
-import '../css/header.css';
-
 const Header = () => (
   <header>
     <div className="left-bar">
