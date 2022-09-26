@@ -22,3 +22,14 @@ export const fetchRocketFromApi = () => async (dispatch) => {
   }));
   dispatch(fetchRockets(mappedRockets));
 };
+
+const rocketReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_ROCKETS:
+      return [...state, ...action.payload.rockets];
+    default:
+      return state;
+  }
+};
+
+export default rocketReducer;
