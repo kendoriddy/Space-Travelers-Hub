@@ -1,7 +1,11 @@
 import React from 'react';
+import RocketCard from '../components/RocketCard';
+import '../css/rockets.css';
 
 const Rockets = () => (
-  <div>Rockets</div>
+  <div>
+    <RocketCard />
+  </div>
 );
 
 export default Rockets;
