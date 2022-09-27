@@ -5,14 +5,10 @@ import setMission from '../redux/mission/MissionAction';
 import MissionCard from '../components/MissionCard';
 
 const Missions = () => {
-  // const missions = useSelector((state) => state.mission);
   const dispatch = useDispatch();
   const fetchMissions = async () => {
     const response = await axios
-      .get('https://api.spacexdata.com/v3/missions')
-      .catch((err) => {
-        console.log('Err', err);
-      });
+      .get('https://api.spacexdata.com/v3/missions');
     dispatch(setMission(response.data));
   };
 
