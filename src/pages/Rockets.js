@@ -10,16 +10,15 @@ const Rocket = () => {
   const fetchRockets = async () => {
     const response = await axios
       .get('https://api.spacexdata.com/v3/rockets')
-      .catch((err) => {
-        console.log('Err', err);
+      .catch(() => {
       });
     dispatch(setRocket(response.data));
+    return rockets;
   };
 
   useEffect(() => {
     fetchRockets();
   }, []);
-  console.log('rockets:', rockets);
 
   return (
     <div>
