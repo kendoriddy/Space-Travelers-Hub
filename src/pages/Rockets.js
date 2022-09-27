@@ -1,32 +1,30 @@
 import React, { useEffect } from 'react';
+import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRocketFromApi } from '../redux/rockets/rockets';
+import setRocket from '../redux/rockets/RocketAction';
 
-const Rockets = () => {
+const Rocket = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+  const fetchRockets = async () => {
+    const response = await axios
+      .get('https://api.spacexdata.com/v3/rockets')
+      .catch((err) => {
+        console.log('Err', err);
+      });
+    dispatch(setRocket(response.data));
+  };
 
   useEffect(() => {
-    if (!rockets.length) dispatch(fetchRocketFromApi());
+    fetchRockets();
   }, []);
+  console.log('rockets:', rockets);
 
   return (
-    <div className="rocket-container">
-      {rockets.map((rocket) => {
-        const {
-          id, name, type, images,
-        } = rocket;
-
-        return (
-          <div key={id} className="rocket">
-            <img src={images} alt="rocket" className="rocket-image" />
-            <p>{name}</p>
-            <p>{type}</p>
-          </div>
-        );
-      })}
+    <div>
+      <h1>Rockets!!!</h1>
     </div>
   );
 };
 
-export default Rockets;
+export default Rocket;
