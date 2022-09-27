@@ -5,7 +5,7 @@ const RocketCard = () => {
   const rockets = useSelector((state) => state.rockets);
 
   const renderRocket = rockets.map((rocket) => (
-    <div key={rocket.id} className="main">
+    <div key={rocket.id} className="rocketBody">
       <div className="rocketImage">
         <img src={rocket.flickr_images} alt={rocket.rocket_name} />
       </div>
