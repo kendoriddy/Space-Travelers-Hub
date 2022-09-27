@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-reserve {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(56, 56, 230);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}

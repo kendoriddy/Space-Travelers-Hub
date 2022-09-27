@@ -1,0 +1,38 @@
+ul {
+  list-style: none;
+}
+
+.profile ul li {
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.wrappe {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mission-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rockets-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
