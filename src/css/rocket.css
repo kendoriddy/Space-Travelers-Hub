@@ -28,7 +28,6 @@
 .rocketDescription button {
   width: max-content;
   padding: 0.5rem 1rem;
-  background-color: var(--blue);
   outline: none;
   border: none;
   color: var(--white);

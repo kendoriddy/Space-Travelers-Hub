@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Badge, Button } from 'react-bootstrap';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 
 const RocketCard = ({
   id, img, name, description, reserved, bookingHandler,
@@ -15,7 +16,7 @@ const RocketCard = ({
         <p>
           {reserved ? (
             <>
-              <Badge bg="success">Reserved</Badge>
+              <Badge bg="primary">Reserved</Badge>
               <span />
             </>
           ) : (
@@ -25,7 +26,7 @@ const RocketCard = ({
         </p>
         {reserved ? (
           <Button
-            variant="success"
+            variant="primary"
             className="btn btn-cancel-reserve width-20vw back-color-gray"
             onClick={() => bookingHandler(id)}
             id={id}
@@ -34,7 +35,7 @@ const RocketCard = ({
           </Button>
         ) : (
           <Button
-            variant="success"
+            variant="primary"
             className="btn btn-reserve width-20vw"
             onClick={() => bookingHandler(id)}
             id={id}
