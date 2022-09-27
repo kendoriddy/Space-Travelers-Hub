@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import setMission from '../redux/mission/MissionAction';
+import MissionCard from '../components/MissionCard';
 
 const Missions = () => {
-  const missions = useSelector((state) => state.mission);
+  // const missions = useSelector((state) => state.mission);
   const dispatch = useDispatch();
   const fetchMissions = async () => {
     const response = await axios
@@ -18,10 +19,9 @@ const Missions = () => {
   useEffect(() => {
     fetchMissions();
   }, []);
-  console.log('Missions:', missions);
   return (
     <div>
-      <h1>Missions!!!</h1>
+      <MissionCard />
     </div>
   );
 };
