@@ -1,26 +1,55 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 import '../css/mission.css';
 
 const MissionCard = ({
-  key, id, name, discription,
-}) => {
-  <div className="mission-card" key={key}>
-    <div className="card" id={id}>
-      <div className="card-heading">
-        <h3>Mission</h3>
-        <h3>Description</h3>
-        <h3>Status</h3>
-      </div>
-      <div className="card-body">
-        <ul>
-          <li><h2>{name}</h2></li>
-          <li><p maxLength="700">{discription}</p></li>
-          <li><button type="button">NOT A MEMBER</button></li>
-          <li><button type="button">jOIN MISSION</button></li>
-        </ul>
-      </div>
-    </div>
-  </div>;
+  id, join, name, description, joinHandler,
+}) => (
+
+  <div className="card-body">
+    <ul>
+      <li><h2>{name}</h2></li>
+      <li><p maxLength="700">{description}</p></li>
+      <li className="btn-center">
+        {
+            join ? (<Badge bg="primary">Active Member</Badge>) : (<Badge bg="secondary">NOT MEMBER</Badge>)
+            }
+      </li>
+      <li className="btn-center">
+        {join ? (
+          <Button
+            variant="outline-danger"
+            onClick={() => joinHandler(id)}
+            id={id}
+          >
+            Leave Mission
+          </Button>
+        ) : (
+          <Button
+            variant="outline-secondary"
+            onClick={() => joinHandler(id)}
+            id={id}
+          >
+            Join Mission
+          </Button>
+        )}
+      </li>
+    </ul>
+  </div>
+);
+
+MissionCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  join: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  joinHandler: PropTypes.func.isRequired,
+};
+
+MissionCard.defaultProps = {
+  join: false,
 };
 
 export default MissionCard;
