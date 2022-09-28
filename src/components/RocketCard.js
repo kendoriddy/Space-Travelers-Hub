@@ -1,27 +1,64 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 
-const RocketCard = () => {
-  const rockets = useSelector((state) => state.rockets);
-
-  const renderRocket = rockets.map((rocket) => (
-    <div key={rocket.id} className="rocketBody">
+const RocketCard = ({
+  id, img, name, description, reserved, bookingHandler,
+}) => (
+  <div className="container">
+    <div className="rocketBody">
       <div className="rocketImage">
-        <img src={rocket.flickr_images} alt={rocket.rocket_name} />
+        <img src={img} alt="" />
       </div>
       <div className="rocketDescription">
-        <h1>{rocket.rocket_name}</h1>
+        <h1>{name}</h1>
         <p>
-          {rocket.description}
+          {reserved ? (
+            <>
+              <Badge bg="primary">Reserved</Badge>
+              <span />
+            </>
+          ) : (
+            <></>
+          )}
+          {description}
         </p>
-        <button type="button">Reserved</button>
+        {reserved ? (
+          <Button
+            variant="primary"
+            className="btn btn-cancel-reserve width-20vw back-color-gray"
+            onClick={() => bookingHandler(id)}
+            id={id}
+          >
+            Cancel Reservation
+          </Button>
+        ) : (
+          <Button
+            variant="primary"
+            className="btn btn-reserve width-20vw"
+            onClick={() => bookingHandler(id)}
+            id={id}
+          >
+            Reserve Rocket
+          </Button>
+        )}
       </div>
     </div>
-  ));
+  </div>
+);
 
-  return (
-    <>{ renderRocket }</>
-  );
+RocketCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  img: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  reserved: PropTypes.bool,
+  bookingHandler: PropTypes.func.isRequired,
+};
+RocketCard.defaultProps = {
+  reserved: false,
 };
 
 export default RocketCard;
