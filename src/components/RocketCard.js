@@ -45,8 +45,12 @@ const RocketCard = ({
         )}
       </div>
     </div>
-  </div>
-);
+  ));
+
+  return (
+    <>{ renderRocket }</>
+  );
+};
 
 RocketCard.propTypes = {
   id: PropTypes.number.isRequired,

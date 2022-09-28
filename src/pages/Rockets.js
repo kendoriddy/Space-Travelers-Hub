@@ -12,12 +12,13 @@ const Rocket = () => {
       console.log('Err', err);
     });
     dispatch(setRocket(response.data));
+    return rockets;
   };
 
   useEffect(() => {
     fetchRockets();
   }, []);
-
+  
   const bookingHandler = (id) => {
     dispatch(bookRocket(id));
   };
