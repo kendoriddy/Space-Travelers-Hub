@@ -1,33 +1,28 @@
-import '../css/profile.css';
+import React from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { useSelector } from 'react-redux';
 
-const ProfileSection = () => (
-  <div className="profile">
-    <div className="container">
-      <div className="wrappe">
-        <div className="mission-section">
+const Profile = () => {
+  const rockets = useSelector((state) => state.rockets);
+  const Rockets = rockets.filter((rock) => rock.reserved);
+  return (
+    <>
+      <div className="profile">
+        <div className="profile-missions">
           <h2>My Missions</h2>
-          <ul>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-          </ul>
+          <div className="mission-group">Missions</div>
         </div>
-
-        <div className="rockets-section">
+        <div className="profile-rockets">
           <h2>My Rockets</h2>
-          <ul>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-            <li><p>Telstar</p></li>
-          </ul>
+          <ListGroup>
+            {Rockets.map(((element) => (
+              <ListGroup.Item key={element.rockets}>{element.rocket_name}</ListGroup.Item>
+            )))}
+          </ListGroup>
         </div>
       </div>
-    </div>
-  </div>
-);
+    </>
+  );
+};
 
-export default ProfileSection;
+export default Profile;
