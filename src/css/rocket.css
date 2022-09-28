@@ -1,0 +1,42 @@
+.rocketBody {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.rocketImage,
+.rocketImage img {
+  width: 15vw;
+}
+
+.rocketDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 65vw;
+}
+
+.rocketDescription h1 {
+  font-size: 18px;
+}
+
+.rocketDescription p {
+  font-size: 14px;
+}
+
+.rocketDescription button {
+  width: max-content;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  border-radius: 0.3rem;
+}
+
+@media only screen and (max-width: 530px) {
+  .rocketImage,
+  .rocketImage img {
+    width: 30vw;
+  }
+}

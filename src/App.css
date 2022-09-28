@@ -1,4 +1,5 @@
 @import './css/header.css';
+@import './css/rocket.css';
 
 :root {
   /* primary colors */
@@ -8,6 +9,7 @@
   --light-gray: #e0e0e0;
   --blur: #d1d1d1;
   --blue: #007bff;
+  --green: #00ff04;
 }
 
 /* global styling  */
