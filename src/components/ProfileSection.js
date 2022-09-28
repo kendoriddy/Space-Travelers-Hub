@@ -7,7 +7,7 @@ const Profile = () => {
   const Rockets = rockets.filter((rock) => rock.reserved);
   return (
     <>
-      <div className="profile">
+      <div className="profile-container">
         <div className="profile-missions">
           <h2>My Missions</h2>
           <div className="mission-group">Missions</div>
