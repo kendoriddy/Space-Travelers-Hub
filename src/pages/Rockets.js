@@ -16,7 +16,7 @@ const Rocket = () => {
   useEffect(() => {
     fetchRockets();
   }, []);
-  
+
   const bookingHandler = (id) => {
     dispatch(bookRocket(id));
   };
