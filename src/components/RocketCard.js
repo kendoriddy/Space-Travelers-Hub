@@ -1,17 +1,27 @@
 import React from 'react';
-import imageUse from '../assets/images/planet.png';
+import { useSelector } from 'react-redux';
 
-const RocketCard = () => (
-  <div>
-    <div className="card">
-      <img src={imageUse} alt="card-img" />
-      <div className="card-body">
-        <h3>Falcon 1</h3>
-        <p maxLength="350">The Falcon is a way an expandable launch sytem privately developed and manafactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 balance the first developed liquid-fuel launch vehicle to go into orbit around the Earth.</p>
-        <button className="btn-reserve" type="button">Reserve Rocket</button>
+const RocketCard = () => {
+  const rockets = useSelector((state) => state.rockets);
+
+  const renderRocket = rockets.map((rocket) => (
+    <div key={rocket.id} className="rocketBody">
+      <div className="rocketImage">
+        <img src={rocket.flickr_images} alt={rocket.rocket_name} />
+      </div>
+      <div className="rocketDescription">
+        <h1>{rocket.rocket_name}</h1>
+        <p>
+          {rocket.description}
+        </p>
+        <button type="button">Reserved</button>
       </div>
     </div>
-  </div>
-);
+  ));
+
+  return (
+    <>{ renderRocket }</>
+  );
+};
 
 export default RocketCard;
