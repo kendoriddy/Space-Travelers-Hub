@@ -47,11 +47,6 @@ const RocketCard = ({
     </div>
   ));
 
-  return (
-    <>{ renderRocket }</>
-  );
-};
-
 RocketCard.propTypes = {
   id: PropTypes.number.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
