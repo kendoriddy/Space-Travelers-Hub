@@ -7,7 +7,6 @@ const Profile = () => {
   const Missions = missions.filter((m) => m.isMember);
   const rockets = useSelector((state) => state.rockets);
   const Rockets = rockets.filter((rock) => rock.reserved);
-  console.log(Rockets);
   return (
     <>
       <div className="profile-container">
