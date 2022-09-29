@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addremoveMembertoMission, LoadMessions } from '../redux/mission/MissionAction';
 
 const Missions = () => {
+  const { missions } = useSelector((state) => state.mission);
   const fetchMissions = async () => {
     const missions = [];
     await fetch('https://api.spacexdata.com/v3/missions')
@@ -25,8 +26,11 @@ const Missions = () => {
     return missions;
   };
   const dispatch = useDispatch();
-  useEffect(() => { fetchMissions().then((res) => dispatch(LoadMessions(res))); }, []);
-  const { missions } = useSelector((state) => state.mission);
+  useEffect(() => {
+    if (missions.length === 0) {
+      fetchMissions().then((res) => dispatch(LoadMessions(res)));
+    }
+  }, []);
   const Missions = missions;
   const toggleMember = (id) => {
     dispatch(addremoveMembertoMission(id));
@@ -43,27 +47,28 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          { Missions.map((m) => (
+          {Missions.map((m) => (
             <tr key={m.mission_id}>
-              <td><strong>{m.mission_name}</strong></td>
+              <td>
+                <strong>{m.mission_name}</strong>
+              </td>
               <td>{m.description}</td>
               <td className="td-button">
                 <h5>
-                  {m.isMember && (
-                  <Badge bg="info">Active Member</Badge>
-                  )}
-                  {!m.isMember && (
-                  <Badge bg="secondary">NOT A MEMBER</Badge>
-                  )}
-
+                  {m.isMember && <Badge bg="info">Active Member</Badge>}
+                  {!m.isMember && <Badge bg="secondary">NOT A MEMBER</Badge>}
                 </h5>
               </td>
               <td className="td-button">
                 {m.isMember && (
-                <Button variant="outline-danger" onClick={() => toggleMember(m.mission_id)}>Leave Mission</Button>
+                  <Button variant="outline-danger" onClick={() => toggleMember(m.mission_id)}>
+                    Leave Mission
+                  </Button>
                 )}
                 {!m.isMember && (
-                <Button variant="outline-secondary" onClick={() => toggleMember(m.mission_id)}>Join Mission</Button>
+                  <Button variant="outline-secondary" onClick={() => toggleMember(m.mission_id)}>
+                    Join Mission
+                  </Button>
                 )}
               </td>
             </tr>

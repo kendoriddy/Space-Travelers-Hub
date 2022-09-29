@@ -14,7 +14,9 @@ const Rocket = () => {
   };
 
   useEffect(() => {
-    fetchRockets();
+    if (rockets.length === 0) {
+      fetchRockets();
+    }
   }, []);
 
   const bookingHandler = (id) => {
