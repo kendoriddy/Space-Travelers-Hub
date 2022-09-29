@@ -3,14 +3,14 @@ import Renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../redux/configureStore';
-import Navbar from '../components/Navbar';
+import Rocket from '../pages/Rockets';
 
-it('renders correctly', () => {
+it('renders as expected', () => {
   const tree = Renderer.create(
     <React.StrictMode>
       <Provider store={store}>
         <BrowserRouter>
-          <Navbar />
+          <Rocket />
         </BrowserRouter>
       </Provider>
     </React.StrictMode>,
