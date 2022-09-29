@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
   const Rockets = rockets.filter((rock) => rock.reserved);
+  console.log(Rockets);
   return (
     <>
       <div className="profile-container">
@@ -16,7 +17,7 @@ const Profile = () => {
           <h2>My Rockets</h2>
           <ListGroup>
             {Rockets.map(((element) => (
-              <ListGroup.Item key={element.rockets}>{element.rocket_name}</ListGroup.Item>
+              <ListGroup.Item key={element.id}>{element.rocket_name}</ListGroup.Item>
             )))}
           </ListGroup>
         </div>
