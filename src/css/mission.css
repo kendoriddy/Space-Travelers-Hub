@@ -1,34 +1,20 @@
-.mission-card {
-  width: 100%;
-  height: 100%;
+.missions-table {
+  margin: 0;
+  text-align: start;
 }
 
-.mission-card .card {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.desc {
+  width: 60%;
 }
 
-.mission-card .card-heading {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+td {
+  vertical-align: middle;
 }
 
-.mission-card .card-body {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.td-button {
+  text-align: center;
 }
 
-.mission-card .card-body ul {
-  list-style: none;
-}
-
-.mission-card .card-body ul li {
-  border: 1px solid black;
+.table-container {
+  margin: 0 2%;
 }
