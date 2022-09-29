@@ -1,62 +1,66 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Space-Travelers-Hub
 
-> Description the project.
+This app is built with HTML | CSS | JAVASCRIPT | React and Redux and JEST it uses multiple API to render rockets and missions and enable users to have reserve the reocket and also join the mission.
 
+![screenshot](./src/assets/images/img1.png)
+![screenshot](./src/assets/images/img2.png)
+![screenshot](./src/assets/images/img3.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML.
+- Javascript.
+- Css.
+- React-Redux.
+- Jest.
+- React-Bootstrap.
 
-## Live Demo (if available)
+## To get a local copy up and running follow these simple example steps.
 
-[Live Demo Link](https://livedemo.com)
+- Clone this repo to your machine by using Git clone: Git clone `https://github.com/kendoriddy/Space-Travelers-Hub.git`
+- open in your vs code terminal and run live server
+- open in your browser
+- run `npm i react-app` to install all the dependencies
+- run `npm start` to start the server
+- run `npm test` to run the test
+- run `npm run build` to build the project
 
+### Run the following tests:
 
-## Getting Started
+To run tests on this project if you tweaked something, run the following command
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+- `npx hint .`
+- `npx stylelint "\*_/_.{css,scss}"`
+- `npx eslint .`
+- Install jest using `npm i --save-dev jest`
+- Install jsDom using `npm install --save-dev jest-environment-jsdom-global jest-environment-jsdom`
+- run your test using `npm run test`
 
+### LIVE DEMO
 
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+Check the live demo here [Coming soon...]()
 
 ## Authors
 
-👤 **Author1**
+👤 **Kehinde Onifade**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/kendoriddy)
+- Twitter: [@twitterhandle](https://twitter.com/rideonone09)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kehindeonifade)
 
-👤 **Author2**
+👤 **Sami Ullah**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/samiullah997)
+- Twitter: [@twitterhandle](https://twitter.com/samiullahk997)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/samiullah-khan-2702b7171/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/kendoriddy/Space-Travelers-Hub/issues).
 
 ## Show your support
 
@@ -70,6 +74,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is licensed by [MIT](./LICENSE).

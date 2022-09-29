@@ -1,0 +1,14 @@
+.profile-container {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.profile-missions {
+  width: 100%;
+}
+
+.profile-rockets {
+  width: 100%;
+}
