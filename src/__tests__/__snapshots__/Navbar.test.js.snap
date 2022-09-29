@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as epected 1`] = `null`;
+
+exports[`renders correctly 1`] = `
+<nav>
+  <ul
+    className="navlist"
+  >
+    <li>
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+      >
+        Rockets
+      </a>
+    </li>
+    <li>
+      <a
+        className="nav-items"
+        href="/missions"
+        onClick={[Function]}
+      >
+        Missions
+      </a>
+    </li>
+    |
+    <li>
+      <a
+        className="nav-items"
+        href="/profile"
+        onClick={[Function]}
+      >
+        My Profile
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
