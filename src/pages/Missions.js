@@ -1,50 +1,75 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import setMission, { joinMission } from '../redux/mission/MissionAction';
-import MissionCard from '../components/MissionCard';
 import '../css/mission.css';
+import React, { useEffect } from 'react';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
+import { useDispatch, useSelector } from 'react-redux';
+import { addremoveMembertoMission, LoadMessions } from '../redux/mission/MissionAction';
 
 const Missions = () => {
-  const missions = useSelector((state) => state.mission);
-  const dispatch = useDispatch();
   const fetchMissions = async () => {
-    const response = await axios
-      .get('https://api.spacexdata.com/v3/missions');
-    dispatch(setMission(response.data));
+    const missions = [];
+    await fetch('https://api.spacexdata.com/v3/missions')
+      .then((res) => res.json())
+      .then((json) => {
+        json.forEach((e) => {
+          const mission = {
+            mission_id: e.mission_id,
+            mission_name: e.mission_name,
+            description: e.description,
+            isMember: false,
+          };
+          missions.push(mission);
+        });
+      });
+    return missions;
   };
-
-  useEffect(() => {
-    fetchMissions();
-  }, []);
-
-  const joiningHandler = (id) => {
-    dispatch(joinMission(id));
+  const dispatch = useDispatch();
+  useEffect(() => { fetchMissions().then((res) => dispatch(LoadMessions(res))); }, []);
+  const { missions } = useSelector((state) => state.mission);
+  const Missions = missions;
+  const toggleMember = (id) => {
+    dispatch(addremoveMembertoMission(id));
   };
-
   return (
-    <div>
-      <div className="mission-card">
-        <div className="card">
-          <div className="card-heading">
-            <h4 className="first">Mission</h4>
-            <h4>Description</h4>
-            <h4 className="end">Status</h4>
-          </div>
-          {
-       missions && missions.map((mission) => (
-         <MissionCard
-           key={mission.mission_id}
-           id={mission.mission_id}
-           join={mission.join}
-           name={mission.mission_name}
-           description={mission.description}
-           joinHandler={joiningHandler}
-         />
-       ))
-      }
-        </div>
-      </div>
+    <div className="table-container">
+      <Table striped bordered hover size="sm" className="missions-table ml-5">
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th className="desc">Description</th>
+            <th>Status</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          { Missions.map((m) => (
+            <tr key={m.mission_id}>
+              <td><strong>{m.mission_name}</strong></td>
+              <td>{m.description}</td>
+              <td className="td-button">
+                <h5>
+                  {m.isMember && (
+                  <Badge bg="info">Active Member</Badge>
+                  )}
+                  {!m.isMember && (
+                  <Badge bg="secondary">NOT A MEMBER</Badge>
+                  )}
+
+                </h5>
+              </td>
+              <td className="td-button">
+                {m.isMember && (
+                <Button variant="outline-danger" onClick={() => toggleMember(m.mission_id)}>Leave Mission</Button>
+                )}
+                {!m.isMember && (
+                <Button variant="outline-secondary" onClick={() => toggleMember(m.mission_id)}>Join Mission</Button>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };
