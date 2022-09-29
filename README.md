@@ -4,9 +4,9 @@
 
 This app is built with HTML | CSS | JAVASCRIPT | React and Redux and JEST it uses multiple API to render rockets and missions and enable users to have reserve the reocket and also join the mission.
 
-![screenshot](./src/asset/images/img1.png)
-![screenshot](./src/asset/images/img2.png)
-![screenshot](./src/asset/images/img3.png)
+![screenshot](./src/assets/images/img1.png)
+![screenshot](./src/assets/images/img2.png)
+![screenshot](./src/assets/images/img3.png)
 
 ## Built With
 
