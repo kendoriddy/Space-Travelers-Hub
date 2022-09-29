@@ -28,8 +28,6 @@ const Missions = () => {
   useEffect(() => { fetchMissions().then((res) => dispatch(LoadMessions(res))); }, []);
   const { error, loading, missions } = useSelector((state) => state.mission);
   const Missions = missions;
-
-  console.log(error, loading, Missions);
   const toggleMember = (id) => {
     dispatch(addremoveMembertoMission(id));
   };
