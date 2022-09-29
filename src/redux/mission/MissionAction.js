@@ -1,12 +1,16 @@
+// Actions
 import ActionTypes from './ActionType';
 
-const setMission = (missions) => ({
-  type: ActionTypes.ACTIVE_MEMBER,
-  payload: missions,
-});
+// Action Creators
 
-export const joinMission = (id) => ({
-  type: ActionTypes.NOT_MEMBER,
-  payload: id,
-});
-export default setMission;
+export function startLoadingMessions(result) {
+  return { type: ActionTypes.START, value: result };
+}
+
+export function LoadMessions(result) {
+  return { type: ActionTypes.LOAD, value: result };
+}
+
+export function addremoveMembertoMission(result) {
+  return { type: ActionTypes.ADD_REMOVE_MEMBER, value: result };
+}

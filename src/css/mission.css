@@ -1,80 +1,20 @@
-.mission-card {
-  width: 100%;
-  height: 100%;
+.missions-table {
+  margin: 0;
+  text-align: start;
 }
 
-.mission-card .card {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  gap: unset;
+.desc {
+  width: 60%;
 }
 
-.mission-card .card-heading {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-inline-start: 48px;
-  padding-inline-end: 15px;
-  justify-content: space-between;
-  margin-top: 20px;
+td {
+  vertical-align: middle;
 }
 
-.mission-card .card-heading h4 {
-  width: 100%;
-  height: 100%;
-  border: 1px solid lightgray;
+.td-button {
   text-align: center;
 }
 
-.mission-card .card-heading .first {
-  width: 23%;
-  height: 100%;
-  border: 1px solid lightgray;
-  text-align: center;
-}
-
-.mission-card .card-heading .end {
-  width: 47%;
-  height: 100%;
-  border: 1px solid lightgray;
-  text-align: center;
-}
-
-.mission-card .card-body {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mission-card .card-body ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  justify-content: space-between;
-}
-
-.mission-card .card-body ul li {
-  padding: 5px;
-  height: 300px;
-  border: 1px solid lightgray;
-}
-
-.mission-card .card-body ul li button {
-  padding: 5px;
-  width: 150px;
-  height: 40px;
-  border: 1px solid lightgray;
-}
-
-.btn-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.table-container {
+  margin: 0 2%;
 }
