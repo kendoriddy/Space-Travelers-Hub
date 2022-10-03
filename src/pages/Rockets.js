@@ -7,6 +7,7 @@ import RocketCard from '../components/RocketCard';
 const Rocket = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchRockets = async () => {
     const response = await axios.get('https://api.spacexdata.com/v3/rockets').catch((err) => err);
     dispatch(setRocket(response.data));
@@ -17,7 +18,7 @@ const Rocket = () => {
     if (rockets.length === 0) {
       fetchRockets();
     }
-  }, []);
+  }, [fetchRockets, rockets.length]);
 
   const bookingHandler = (id) => {
     dispatch(bookRocket(id));

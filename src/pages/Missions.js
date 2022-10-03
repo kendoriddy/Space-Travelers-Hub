@@ -30,7 +30,7 @@ const Missions = () => {
     if (missions.length === 0) {
       fetchMissions().then((res) => dispatch(LoadMessions(res)));
     }
-  }, []);
+  }, [dispatch, missions.length]);
   const Missions = missions;
   const toggleMember = (id) => {
     dispatch(addremoveMembertoMission(id));
