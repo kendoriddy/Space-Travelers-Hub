@@ -40,7 +40,7 @@ To run tests on this project if you tweaked something, run the following command
 
 ### LIVE DEMO
 
-Check the live demo here [Coming soon...]()
+Check the live demo here [Marvel Space](https://marvel-space.netlify.app/)
 
 ## Authors
 
