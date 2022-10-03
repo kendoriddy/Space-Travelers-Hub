@@ -2,6 +2,7 @@
 
 # Space-Travelers-Hub
 
+The Space Travelers is a a React, Redux application based on the SpaceX API.
 This app is built with HTML | CSS | JAVASCRIPT | React and Redux and JEST it uses multiple API to render rockets and missions and enable users to have reserve the reocket and also join the mission.
 
 ![screenshot](./src/assets/images/img1.png)
